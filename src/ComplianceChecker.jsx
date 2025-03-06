@@ -67,8 +67,6 @@ const ComplianceChecker = () => {
 
       {error && <p className="error">{error}</p>}
 
-      {apiUrl && <p>API URL: {apiUrl}</p>} {/* Display the API URL */}
-
       {complianceData && (
         <div className="results">
           <h2>Compliance Report</h2>
