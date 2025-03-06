@@ -74,7 +74,7 @@ const ComplianceChecker = () => {
           <h2>Compliance Report</h2>
 
           <div className="report-section">
-            <h3>糖 Privacy Policy</h3>
+             <h3>📜 Privacy Policy</h3>
             <p>
               <strong>SMS Consent Statement:</strong>{" "}
               {complianceData.privacy_policy?.sms_consent_statement?.status === "found"
@@ -90,7 +90,7 @@ const ComplianceChecker = () => {
           </div>
 
           <div className="report-section">
-            <h3>塘 Terms & Conditions</h3>
+            <h3>📄 Terms & Conditions</h3>
             <p>
               <strong>Message Types Specified:</strong>{" "}
               {complianceData.terms_conditions?.message_types_specified?.status === "found"
@@ -106,7 +106,7 @@ const ComplianceChecker = () => {
           </div>
 
           <div className="report-section">
-            <h3>博 Overall Compliance Status</h3>
+            <h3>🔎 Overall Compliance Status</h3>
             <p>
               <strong>Status:</strong> {complianceData.overall_compliance || "Unknown"}
             </p>
