@@ -60,18 +60,21 @@ function Diagnostics() {
     };
 
     const testWebSocket = () => {
-    setWebsocketOutput('Testing WebSocket...');
-    const ws = new WebSocket('wss://echo.websocket.events');
+        setWebsocketOutput('Testing WebSocket...');
+        const ws = new WebSocket('wss://echo.websocket.events');
 
-    ws.onopen = () => {
-        setWebsocketOutput((prev) => prev + '<br>WebSocket connection opened.');
-        ws.close();
-    };
+        ws.onopen = () => {
+            setWebsocketOutput((prev) => prev + '<br>WebSocket connection opened.');
+            ws.close();
+        };
 
-    ws.onerror = (error) => {
-        setWebsocketOutput((prev) => prev + `<br>WebSocket error: ${error.message}`);
+        ws.onerror = (error) => {
+            setWebsocketOutput((prev) => prev + `<br>WebSocket error: ${error.message}`);
+        };
+        ws.onclose = () => {
+            setWebsocketOutput((prev) => prev + '<br>WebSocket connection closed.');
+        };
     };
-};
 
     return (
         <div>
