@@ -1,4 +1,3 @@
-/* eslint-disable */
 // src/Diagnostics.js
 import React, { useState, useEffect } from 'react';
 
