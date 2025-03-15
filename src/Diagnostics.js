@@ -60,26 +60,18 @@ function Diagnostics() {
     };
 
     const testWebSocket = () => {
-        const ws = new WebSocket('wss://echo.websocket.events'); // Replace with your WebSocket server.
+    setWebsocketOutput('Testing WebSocket...');
+    const ws = new WebSocket('wss://echo.websocket.events');
 
-        ws.onopen = () => {
-            setWebsocketOutput((prev) => prev + '<br>WebSocket connection opened.');
-            ws.send('Ping');
-        };
-
-        ws.onmessage = (event) => {
-            setWebsocketOutput((prev) => prev + `<br>WebSocket message received: ${event.data}`);
-            ws.close();
-        };
-
-        ws.onerror = (error) => {
-            setWebsocketOutput((prev) => prev + `<br>WebSocket error: ${error.message}`);
-        };
-
-        ws.onclose = () => {
-            setWebsocketOutput((prev) => prev + '<br>WebSocket connection closed.');
-        };
+    ws.onopen = () => {
+        setWebsocketOutput((prev) => prev + '<br>WebSocket connection opened.');
+        ws.close();
     };
+
+    ws.onerror = (error) => {
+        setWebsocketOutput((prev) => prev + `<br>WebSocket error: ${error.message}`);
+    };
+};
 
     return (
         <div>
